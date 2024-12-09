@@ -261,10 +261,10 @@ public void testaEnderecamentoAberto(int n_registros) {
 }
     // Método principal para teste do método `testaFuncaoHash`
  
-    /*public static void main(String[] args) {
+    public static void main(String[] args) {
         TabHashClientes tabela = new TabHashClientes();
         tabela.testaFuncaoHash(500);
        // tabela.testaEnderecamentoAberto(500); // Testa a função hash com 10.000 registros
        
-    }*/
+    }
 }
