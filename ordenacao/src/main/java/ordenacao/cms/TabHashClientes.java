@@ -32,7 +32,7 @@ public class TabHashClientes {
             soma += Math.abs(chave.charAt(i)) * (i + 1);
         }
         
-     //   System.out.println("Valores de K: " + soma);
+    //    System.out.println("Valores de K: " + soma);
     //    System.out.println( "Chave: " + (soma % MAXTAB));    
         return soma % MAXTAB;
         }

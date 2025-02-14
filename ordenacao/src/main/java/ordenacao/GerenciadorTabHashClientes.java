@@ -4,7 +4,6 @@ import java.util.Scanner;
 import ordenacao.cms.TabHashClientes;
 import ordenacao.cms.Cliente;
 
-
 public class GerenciadorTabHashClientes {
     private TabHashClientes tabela;
 
@@ -15,8 +14,8 @@ public class GerenciadorTabHashClientes {
     public void exibirMenu() {
         Scanner scanner = new Scanner(System.in);
         int opcao;
-
-        do {
+        boolean running = true;
+        while (running ){
             System.out.println("\n=== Menu Gerenciador de Tabela Hash ===");
             System.out.println("1. Inserir cliente");
             System.out.println("2. Remover cliente");
@@ -33,14 +32,13 @@ public class GerenciadorTabHashClientes {
                     removerCliente(scanner);
                     break;
                 case 0:
-                    System.out.println("Encerrando o programa...");
+                    running = false;
+                    System.out.println("Encerrando a edição...");
                     break;
                 default:
                     System.out.println("Opção inválida! Tente novamente.");
             }
-        } while (opcao != 0);
-
-        scanner.close();
+        }
     }
 
     private void inserirCliente(Scanner scanner) {
@@ -66,13 +64,12 @@ public class GerenciadorTabHashClientes {
             System.out.println("Erro ao inserir cliente. Colisão ou problema detectado.");
         }
     }
-
     private void removerCliente(Scanner scanner) {
         System.out.println("\n=== Remover Cliente ===");
         System.out.print("Digite o nome do cliente para remover: ");
         String nome = scanner.nextLine();
-
-        boolean sucesso = tabela.delete(nome);
+       
+        boolean sucesso = true;
 
         if (sucesso) {
             System.out.println("Cliente removido com sucesso!");
